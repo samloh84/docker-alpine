@@ -1,0 +1,4 @@
+#!/bin/ash
+
+apk --update add $@
+rm -rf /var/cache/apk/*
