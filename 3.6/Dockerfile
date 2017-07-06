@@ -21,7 +21,7 @@ COPY fix-permissions fix-ownership apk-install /usr/local/bin/
 RUN chmod a+rxs /usr/local/bin/fix-permissions \
 /usr/local/bin/fix-ownership \
 /usr/local/bin/apk-install && \
-apk-install shadow coreutils git nano curl && \
+apk-install shadow coreutils git nano curl openssl && \
 mkdir -p `dirname ${APP_USER_HOME}` && \
 groupadd --gid ${APP_GID} ${APP_GROUPNAME} && \
 useradd --uid ${APP_UID} --gid ${APP_GID} \
