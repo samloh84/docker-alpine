@@ -1,4 +1,22 @@
 #!/bin/ash
 
+#!/bin/bash
+
+ACTION="add"
+case ${1} in
+	add)
+		ACTION="add"
+		shift
+	;;
+	update)
+		ACTION="update"
+		shift
+	;;
+	del)
+		ACTION="del"
+		shift
+	;;
+esac
+
 apk --update add $@
 rm -rf /var/cache/apk/*
